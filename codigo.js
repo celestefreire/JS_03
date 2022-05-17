@@ -7,36 +7,54 @@ let importancia
 
 let masTareas
 
+const pocoImportante = []
+const importante = []
+const muyImportante = []
+
+class TareasDiarias {
+    constructor(tarea, hora, importancia) {
+        this.tarea = tarea;
+        this.hora = hora;
+        this.importancia = importancia;
+    }
+}
+
 const admImportancia = () => {
-        switch (importancia) {
+        switch (tareaTarea.importancia) {
             case `1`: console.log("POCO IMPORTANTE");
+                        pocoImportante.push(tareaTarea)
             break;
             case `2`: console.log("IMPORTANTE");
+                        importante.push(tareaTarea)
             break;
             case `3`: console.log("MUY IMPORTANTE");
+                        muyImportante.push(tareaTarea)
             break;
             default: console.log("NO INGRESO IMPORTANCIA");
             break;
         }
     }
 
-const tareasDiarias = () => {
+const preguntaTareas = () => {
     
     tarea = prompt(usuario + ", ¿Que tenes que hacer hoy?")
     hora = prompt("¿A qué hora?")
     importancia = prompt("Ingresa \n 1 si esta tarea es POCO IMPORTANTE \n 2 si esta tarea es IMPORTANTE \n 3 si esta tarea es MUY IMPORTANTE")
 
-    admImportancia()
+    return tareaTarea = new TareasDiarias (tarea, hora, importancia)
 }
 
 if (ingreso == true) {
-    tareasDiarias()
+    preguntaTareas()
+    admImportancia()
     alert (`Excelente, ${usuario}. ${tarea} se agrego a tus tareas en este horario: ${hora}`)
 
     masTareas = confirm("¿Queres ingresar una nueva tarea?")
 
     while (masTareas == true) {
-        tareasDiarias()
+        preguntaTareas()
+        admImportancia()
+
         alert (`Excelente, ${usuario}. ${tarea} se agrego a tus tareas en este horario: ${hora}`)
 
         masTareas = confirm("¿Queres ingresar una nueva tarea?")
